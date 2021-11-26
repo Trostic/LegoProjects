@@ -1657,7 +1657,7 @@ spawn(function()
 end)
 spawn(function()
     while true do
-        wait()
+        wait(0.01)
         if getgenv().autocase == true then
             local args = {
                 [1] = case
@@ -1670,7 +1670,7 @@ end)
 
 spawn(function()
     while true do
-        wait()
+        wait(0.01)
         if getgenv().autosell == true then
             game:GetService("ReplicatedStorage").Events.sellEntire:InvokeServer()
         end
