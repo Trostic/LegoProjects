@@ -33,12 +33,12 @@ coroutine.wrap(
 
 for i, v in pairs(game.Players:GetChildren()) do
     v.Chatted:Connect(function(msg)
-            if msg == "EZFLIP" then game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("true, i use ezflip","All")
+            if msg == "EZFLIP" then game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("true, i use ezflip","All") end
     end)
 end
 game.Players.PlayerAdded:Connect(function(v)
    v.Chatted:Connect(function(msg)
-            if msg == "EZFLIP" then game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("true, i use ezflip","All")
+            if msg == "EZFLIP" then game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("true, i use ezflip","All") end
     end)        
 end)
 local function MakeDraggable(topbarobject, object)
