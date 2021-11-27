@@ -1712,7 +1712,7 @@ end
 getgenv().automoneyclick = false;
 getgenv().autocase = false;
 getgenv().autosell = false;
-local case = "Common";
+getgenv().case = "Common";
 local a = lib:Window("EzFlip - Trostic",nil,Enum.KeyCode.RightAlt)
 local main = a:Tab("Main")
 spawn(function()
@@ -1728,7 +1728,7 @@ spawn(function()
         wait(0.01)
         if getgenv().autocase == true then
             local args = {
-                [1] = case
+                [1] = getgenv().case
             }
 
             game:GetService("ReplicatedStorage").Events.crateroll_request:InvokeServer(unpack(args))
@@ -1787,7 +1787,7 @@ main:Toggle("Auto Money Clicker",false,function(v)
     getgenv().automoneyclick = v
 end)
 main:Dropdown("Select Case",{"Common","Rare","Epic","Legendary","Exotic","Winter"},function(v)
-    case = v
+    getgenv().case = v
 end)
 main:Toggle("Auto Spam Buy Case",false,function(v)
     getgenv().autocase = true
